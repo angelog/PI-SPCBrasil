@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Recompensas SPC - Projeto Integrador</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<style>
+		ul { list-style-type: none; margin: 0; padding: 0; overflow: hidden; border-top-style: solid; border-width: 1px; border-color: #CFCFCF;}
+		li { float: right;}
+		li a {display: block; text-align: center; padding: 14px 16px; text-decoration: none; color: #9C9C9C; font-size: 15px;}
+		p{ font-size: 15px;	padding-top: 2px;}
+	</style>
+</head>
+
+<body>
+
+<div>
+	<form th:action="@{/logout}" method="get">
+		<button style="font-size: 14px; float: right; margin-top: 3px; margin-bottom: 3px; margin-right: 3px; margin-left: 3px;" class="btn btn-sm btn-danger" name="registration"
+				type="Submit">Sair
+		</button>
+	</form>
+</div>
+
+<div style="font-size: 14px; float: right; margin-top: 6px; margin-bottom: 0px; margin-right: 3px; margin-left: 3px; align" >
+	<span th:utext="${userName}" ></span>
+</div>
+
+<div>
+	<img th:src="@{/images/logoSVG.svg}" class="rounded" style="height: 30px; margin-top: 3px; margin-bottom: 3px; margin-right: 3px; margin-left: 3px;">
+</div>
+
+<div>
+	<nav>
+		<ul>
+			<li><a th:href="@{/admin/home}">Home</a></li>
+			<li><a th:href="@{/admin/rewards}">Voltar</a></li>
+			<li><a href="#">Histórico de pagamento</a></li>
+			<li><a href="#">Histórico Liberado</a></li>
+			<li><a href="#">Consulte seu CPF</a></li>
+			<li><a href="#">Empresas Suspensas</a></li>
+			<li><a href="#">Contestações</a></li>
+		</ul>
+	</nav>
+</div>
+<div class="container">
+</div>
+
+<div align="center" style="font-size: 22px; margin-top: 20px; margin-bottom: 10px;" id="Points">
+	<span th:utext="${userPontos}" ></span>
+</div>
+<div style="margin-left: 1%;">
+	<h1>Sistema de Pontos</h1>
+</div>
+<div class="card border border-dark" style="width: 98%; margin-left: 1%;">
+	<div class="card-body">
+		<h2 class="card-title" style="text-align: center;">O que é o Sistema de Recompensas?</h2>
+		<p class="card-text" style="text-justify: auto;">O sistema de recompensa é um sistema de pontos criado para trazer benefícios aos nossos clientes, pois nada melhor do que ganhar presentinhos nao é mesmo ?! Esses pontos são adquiridos através da sua própria movimentação financeira, quanto mais você cumpre seus deveres, mais a gente fica feliz e te dar mais pontos pra você poder trocar por vários presentes.</p>
+	</div>
+</div>
+<div class="row" style="margin-top: 60px; margin-right: 2px; margin-left: 2px;">
+	<div class="col-sm-6">
+		<div class="card border border-dark">
+			<div class="card-body">
+				<h2 class="card-title" style="text-align: center;">Como Ganhar Pontos</h2>
+				<p class="card-text" style="text-justify: auto;">Os pontos são contabilizados automaticamente conforme o histórico do seu score e pagamentos.Eles não são descontados, apenas acumulados para usa-los quando quiser. Se tiver dúvidas entre em contato conosco.</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="card border border-dark">
+			<div class="card-body">
+				<h2 class="card-title" style="text-align: center;">Vantagens</h2>
+				<p class="card-text" style="text-justify: auto;">A vantagem de manter seus pontos é que você consegue adquirir cursos que vão te ajudar a crescer cada vez mais na sua vida financeira, trazendo muitos benefícios para você crescer. O SPC acredita que a educação financeira pode nos aproximar. </p>
+			</div>
+		</div>
+	</div>
+</div>
+<div style="text-align: center;">
+	<a th:href="@{/admin/loja}"><button class="btn btn-outline-success"	style="width: 200px; margin-right: 70px; margin-top: 60px; font-size: 15px; margin-bottom: 40px;" >Loja</button>
+	<a th:href="@{/admin/email}"><button class="btn btn-outline-success" style="width: 200px; margin-left: 10px; margin-top: 60px; font-size: 15px; margin-bottom: 40px;">Fale Conosco</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+</div>
+</div>
+</div>
+</body>
+</html>

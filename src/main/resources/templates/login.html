@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Login - Projeto Integrador</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div style="background: white; height: 40px"></div>
+
+<div align="center">
+    <img th:src="@{/images/logoSVG.svg}" class="img-responsive" width="200" height="200" alt="Logo"/>
+</div>
+
+<div style="background: white; height: 50px"></div>
+
+<div align="center" class="container">
+    <form th:action="@{/login}" method="POST" class="form-signin">
+        <h3 th:text="Login"></h3>
+
+        <input type="text" id="user_name" name="user_name" placeholder="CPF"
+               class="form-control"/> <br/>
+
+        <input type="password" th:placeholder="Senha"
+               id="password" name="password" class="form-control"/><br/>
+
+        <div align="center" th:if="${param.error}">
+            <p style="font-size: 20; color: #FF1C19;">Usuário ou Senha inválidos!</p>
+        </div>
+
+        <button class="btn btn-lg btn-success btn-block" name="Submit" value="Login" type="Submit" th:text="Login"></button>
+    </form>
+
+    <br/>
+
+    <form th:action="@{/registration}" method="get">
+        <button class="btn btn-lg btn-warning btn-block" type="Submit">Criar Usuário</button>
+    </form>
+</div>
+</body>
+</html>

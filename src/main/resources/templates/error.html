@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Erro! - Projeto Integrador</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div style="background: white; height: 40px"></div>
+
+<div align="center">
+    <img th:src="@{/images/logoSVG.svg}" class="img-responsive" width="200" height="200" alt="Logo"/>
+</div>
+
+<div style="background: white; height: 60px"></div>
+
+<div align="center" class="container">
+    <h1>Ocorreu um erro!</h1>
+    <p>
+        Ocorreu um erro. Entre em contato com o administrador...
+    </p>
+</div>
+
+<div style="background: white; height: 140px"></div>
+
+<div align="center">
+    <form th:action="@{/login}" method="get">
+        <button class="btn btn-success btn-lg" type="Submit">Voltar ao Login</button>
+    </form>
+</div>
+
+</body>
+</html>
